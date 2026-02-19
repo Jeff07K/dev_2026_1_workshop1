@@ -100,7 +100,7 @@ class Conversion:
             binario_a_decimal("1010") -> 10
             binario_a_decimal("11111111") -> 255
         """
-        pass
+        return int(binario, 2) # Convertir de binario a decimal usando base 2 (+w+)
     
     def decimal_a_romano(self, numero):
         """
