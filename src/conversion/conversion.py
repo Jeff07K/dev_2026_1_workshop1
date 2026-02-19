@@ -16,7 +16,7 @@ class Conversion:
             celsius_a_fahrenheit(100) -> 212.0
         """
         return (celsius * 9/5) + 32
-        return 32.0
+       
     
     def fahrenheit_a_celsius(self, fahrenheit):
         """
@@ -34,7 +34,7 @@ class Conversion:
             fahrenheit_a_celsius(32) -> 0.0
             fahrenheit_a_celsius(212) -> 100.0
         """
-        pass
+        return (fahrenheit - 32) * 5/9
     
     def metros_a_pies(self, metros):
         """
