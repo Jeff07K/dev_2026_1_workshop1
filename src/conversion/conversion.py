@@ -84,7 +84,7 @@ class Conversion:
             decimal_a_binario(10) -> "1010"
             decimal_a_binario(255) -> "11111111"
         """
-        pass
+        return bin(decimal)[2:]  # Convertir a binario y eliminar el prefijo '0b'
     
     def binario_a_decimal(self, binario):
         """
