@@ -116,7 +116,27 @@ class Conversion:
             decimal_a_romano(9) -> "IX"
             decimal_a_romano(1994) -> "MCMXCIV"
         """
-        pass
+        val = [
+            1000, 900, 500, 400,
+            100, 90, 50, 40,
+            10, 9, 5, 4,
+            1
+            ]
+        syms = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+            ]
+        roman_num = ''
+        i = 0
+        while  numero > 0:
+            for _ in range(numero // val[i]):
+                roman_num += syms[i]
+                numero -= val[i]
+            i += 1
+
+        return roman_num
     
     def romano_a_decimal(self, romano):
         """
