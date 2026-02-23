@@ -152,28 +152,28 @@ class Conversion:
             romano_a_decimal("IX") -> 9
             romano_a_decimal("MCMXCIV") -> 1994
         """
-        
+        syms = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX","V", "IV",
+            "I"
+            ]
         val = [
             1000, 900, 500, 400,
             100, 90, 50, 40,
             10, 9, 5, 4,
             1
             ]
-        syms = [
-            "M", "CM", "D", "CD",
-            "C", "XC", "L", "XL",
-            "X", "IX", "V", "IV",
-            "I"
-            ]
-        num_romano = ''
+        numero = 0
+        
         i = 0
-        while  numero > 0:
-            for _ in range(numero // val[i]):
-                num_romano += syms[i]
-                numero -= val[i]
+        while len(romano) > 0: 
+            while romano.startswith(syms[i]):
+                numero += val[i]
+                romano = romano[len(syms[i]):] 
             i += 1
 
-        return num_romano
+        return numero
     
     def texto_a_morse(self, texto):
         """
