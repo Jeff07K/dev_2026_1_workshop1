@@ -47,8 +47,32 @@ class Data:
         Returns:
             list: Lista sin elementos duplicados
         """
-        pass
+        vistos = set()
+        lista_sin_duplicados = []
     
+        for item in lista:
+         identificador = (item, type(item))
+         if identificador not in vistos:
+            vistos.add(identificador)
+            lista_sin_duplicados.append(item)
+    
+        return lista_sin_duplicados
+    
+    """
+he de reconocer que para este este test tuve que recurrir a la ayuda 
+de la ia pero por eso tratare de explicar sus partes a como lo comprendí. 
+
+primero se creo una tupla con identificador = (item, type(item))
+gracia eso se puede tratar a i como un int y true como un bool 
+pese a que i==true
+type(item) para diferenciar elementos que son "iguales" en valor pero 
+de diferentes tipos. 
+La tupla (valor, tipo) actúa como una "clave" única para cada elemento 
+considerando tanto su valor como su tipo
+por si alguien lo lee al detalle le anexo un video que tenia de fondo 
+cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
+"""
+
     def merge_ordenado(self, lista1, lista2):
         """
         Combina dos listas ordenadas en una sola lista ordenada.
