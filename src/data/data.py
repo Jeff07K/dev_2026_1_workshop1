@@ -75,6 +75,10 @@ cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
 
     def merge_ordenado(self, lista1, lista2):
         """
+        Merge en informática se refiere a la operación de unir dos o 
+        más conjuntos de datos, ramas de código o historiales de 
+        cambios en una sola unidad coherente.
+        
         Combina dos listas ordenadas en una sola lista ordenada.
         
         Args:
@@ -84,7 +88,26 @@ cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
         Returns:
             list: Lista combinada y ordenada
         """
-        pass
+        lista_combinada = []
+        i, j = 0, 0
+        
+        while i < len(lista1) and j < len(lista2):
+            if lista1[i] < lista2[j]:
+                lista_combinada.append(lista1[i])
+                i += 1
+            else:
+                lista_combinada.append(lista2[j])
+                j += 1
+        
+        # Agregar los elementos restantes de lista1 o lista2
+        while i < len(lista1):
+            lista_combinada.append(lista1[i])
+            i += 1
+        while j < len(lista2):
+            lista_combinada.append(lista2[j])
+            j += 1
+        
+        return lista_combinada
     
     def rotar_lista(self, lista, k):
         """
