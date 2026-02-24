@@ -239,4 +239,16 @@ cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
         Returns:
             list: Matriz transpuesta
         """
-        pass
+        if not matriz:
+         return []
+    
+        filas = len(matriz)
+        columnas = len(matriz[0])
+    
+        transpuesta = [[0] * filas for _ in range(columnas)]
+    
+        for i in range(filas):           # Recorremos filas originales
+         for j in range(columnas):    # Recorremos columnas originales
+            transpuesta[j][i] = matriz[i][j]  # Intercambiamos índices
+    
+        return transpuesta
