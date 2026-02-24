@@ -172,7 +172,30 @@ cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
         Returns:
             dict: Diccionario con métodos push, pop, peek y is_empty
         """
-        pass
+        pila = []
+        
+        def push(elemento):
+            pila.append(elemento)
+        
+        def pop():
+            if not pila:
+                raise IndexError("La pila está vacía")
+            return pila.pop()
+        
+        def peek():
+            if not pila:
+                raise IndexError("La pila está vacía")
+            return pila[-1]
+        
+        def is_empty():
+            return len(pila) == 0
+        
+        return {
+            "push": push,
+            "pop": pop,
+            "peek": peek,
+            "is_empty": is_empty
+        }
     
     def implementar_cola(self):
         """
