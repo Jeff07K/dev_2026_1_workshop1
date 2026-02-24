@@ -204,7 +204,30 @@ cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
         Returns:
             dict: Diccionario con métodos enqueue, dequeue, peek y is_empty
         """
-        pass
+        cola = []
+        
+        def enqueue(elemento):
+            cola.append(elemento)
+        
+        def dequeue():
+            if not cola:
+                raise IndexError("La cola está vacía")
+            return cola.pop(0)
+        
+        def peek():
+            if not cola:
+                raise IndexError("La cola está vacía")
+            return cola[0]
+        
+        def is_empty():
+            return len(cola) == 0
+        
+        return {
+            "enqueue": enqueue,
+            "dequeue": dequeue,
+            "peek": peek,
+            "is_empty": is_empty
+        }
     
     def matriz_transpuesta(self, matriz):
         """
