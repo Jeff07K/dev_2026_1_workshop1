@@ -14,8 +14,21 @@ class Games:
             - Piedra vence a tijera
             - Tijera vence a papel
             - Papel vence a piedra
+        
+        Ejemplo:
+            piedra_papel_tijera("piedra", "tijera") -> "jugador1"
+            piedra_papel_tijera("papel", "piedra") -> "jugador1"
+            piedra_papel_tijera("tijera", "papel") -> "jugador1"
+            piedra_papel_tijera("tijera", "piedra") -> "jugador2"
+            piedra_papel_tijera("piedra", "papel") -> "jugador2"
+            piedra_papel_tijera("papel", "tijera") -> "jugador2"
+            piedra_papel_tijera("piedra", "piedra") -> "empate"
+            piedra_papel_tijera("papel", "papel") -> "empate"
+            piedra_p
         """
+
         pass
+        
     
     def adivinar_numero_pista(self, numero_secreto, intento):
         """
