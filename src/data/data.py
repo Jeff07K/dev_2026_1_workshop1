@@ -120,7 +120,18 @@ cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
         Returns:
             list: Lista rotada
         """
-        pass
+        if not lista:
+         return lista
+    
+        if k is None:
+         k = 0
+    
+        k = k % len(lista)
+    
+        if k == 0:
+         return lista
+    
+        return lista[-k:] + lista[:-k]
     
     def encuentra_numero_faltante(self, lista):
         """
