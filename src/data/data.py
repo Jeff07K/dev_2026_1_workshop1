@@ -141,7 +141,7 @@ cunado funciono https://youtu.be/K-gbAi5UIg0?si=60H9YhF8_Dz3zESB
             lista (list): Lista de enteros del 1 al n con un número faltante
             
         Returns:
-            int: El número que falta en la secuencia
+            int: El número que falta en la secuencia (°w°)
         """
         n = len(lista) + 1  # El número total de elementos debería ser n
         suma_esperada = n * (n + 1) // 2  # Suma de los primeros n números
