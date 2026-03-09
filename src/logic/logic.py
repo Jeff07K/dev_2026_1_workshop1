@@ -120,4 +120,7 @@ class Logica:
         """
         return self.XNOR(a, b)
     
-    
+    """
+    todos los tests de logic.py funcionan correctamente, 
+    por lo que esta completo 
+    """
