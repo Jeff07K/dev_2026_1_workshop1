@@ -42,7 +42,9 @@ class Geometria:
         Returns:
             float: Área del círculo
         """
-        pass
+        if radio < 0:
+            return 0
+        return (3.14159) * (radio ** 2)
     
     def perimetro_circulo(self, radio):
         """
