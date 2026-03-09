@@ -118,6 +118,6 @@ class Logica:
         Returns:
             bool: Resultado de la bi-implicación
         """
-        pass
+        return self.XNOR(a, b)
     
     
