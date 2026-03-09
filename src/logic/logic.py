@@ -66,7 +66,7 @@ class Logica:
         Returns:
             bool: Resultado de a NAND b
         """
-        pass
+        return not (a and b)
     
     def NOR(self, a, b):
         """
