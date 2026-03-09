@@ -56,7 +56,9 @@ class Geometria:
         Returns:
             float: Perímetro del círculo
         """
-        pass
+        if radio < 0:
+            return 0
+        return 2 * (3.14159) * radio
     
     def area_triangulo(self, base, altura):
         """
