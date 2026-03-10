@@ -14,8 +14,12 @@ class Strings:
         Returns:
             bool: True si es palíndromo, False en caso contrario
         """
-        pass
-    
+        limpio = ""
+        for c in texto.lower():
+            if c != " ":
+                limpio += c
+        return limpio == limpio[::-1]
+
     def invertir_cadena(self, texto):
         """
         Invierte una cadena de texto sin usar slicing ni reversed().
