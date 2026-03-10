@@ -36,7 +36,17 @@ class Magic:
         Returns:
             list: Lista con los primeros n números de Fibonacci
         """
-        pass
+        if n <= 0:
+            return []
+        elif n == 1:
+            return [0]
+        elif n == 2:
+            return [0, 1]
+
+        secuencia = [0, 1]
+        for i in range(2, n):
+            secuencia.append(secuencia[-1] + secuencia[-2])
+        return secuencia
     
     def es_primo(self, n):
         """
