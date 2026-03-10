@@ -129,4 +129,6 @@ class Stats:
         Ejemplo:
             rango([1, 5, 3, 9, 2]) -> 8
         """
-        pass
+        if len(numeros) == 0:
+            return 0
+        return max(numeros) - min(numeros)
