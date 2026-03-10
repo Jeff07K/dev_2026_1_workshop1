@@ -31,8 +31,18 @@ class Stats:
             mediana([1, 2, 3, 4, 5]) -> 3.0
             mediana([1, 2, 3, 4]) -> 2.5
         """
-        pass
-    
+        if len(numeros) == 0:
+            return 0
+
+        nums = sorted(numeros)
+        n = len(nums)
+        mitad = n // 2
+
+        if n % 2 == 1:
+            return float(nums[mitad])
+        else:
+            return (nums[mitad - 1] + nums[mitad]) / 2
+
     def moda(self, numeros):
         """
         Encuentra el valor que aparece con mayor frecuencia en la lista.
