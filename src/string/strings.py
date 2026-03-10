@@ -61,9 +61,15 @@ class Strings:
             
         Returns:
             int: Número de consonantes en la cadena
-        """
-        pass
-    
+        """ 
+        vocales = "aeiouyAEIOUY"
+        contador = 0
+        for c in texto:
+            if c.isalpha() and c not in vocales:
+                contador += 1   
+        return contador
+        
+
     def es_anagrama(self, texto1, texto2):
         """
         Verifica si dos cadenas son anagramas (contienen exactamente los mismos caracteres).
@@ -75,7 +81,13 @@ class Strings:
         Returns:
             bool: True si son anagramas, False en caso contrario
         """
-        pass
+        t1 = texto1.replace(" ", "").lower()
+        t2 = texto2.replace(" ", "").lower()
+
+        if len(t1) != len(t2):
+         return False
+
+        return sorted(t1) == sorted(t2)
     
     def contar_palabras(self, texto):
         """
