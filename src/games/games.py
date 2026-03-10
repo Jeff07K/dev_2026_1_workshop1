@@ -78,25 +78,32 @@ class Games:
         """
         # Verificar filas
         for fila in tablero:
-            if fila[0] == fila[1] == fila[2] != " ":
-                return fila[0]
-        
-        # Verificar columnas
+            if fila[0] == fila[1] == fila[2] and fila[0] != " ":
+             return fila[0]
+
+         # revisar columnas
         for col in range(3):
-            if tablero[0][col] == tablero[1][col] == tablero[2][col] != " ":
-                return tablero[0][col]
-        
-        # Verificar diagonales
-        if tablero[0][0] == tablero[1][1] == tablero[2][2] != " ":
-            return tablero[0][0]
-        if tablero[0][2] == tablero[1][1] == tablero[2][0] != " ":
-            return tablero[0][2]
-        
-        # Verificar empate o continua
-        if all(tablero[i][j] != " " for i in range(3) for j in range(3)):
+         if tablero[0][col] == tablero[1][col] == tablero[2][col] and tablero[0][col] != " ":
+            return tablero[0][col]
+
+        # revisar si quedan espacios
+        hay_espacios = False
+        for fila in tablero:
+         if " " in fila:
+            hay_espacios = True
+
+        # diagonales solo si no hay espacios
+        if not hay_espacios:
+
+            if tablero[0][0] == tablero[1][1] == tablero[2][2] and tablero[0][0] != " ":
+                return tablero[0][0]
+
+            if tablero[0][2] == tablero[1][1] == tablero[2][0] and tablero[0][2] != " ":
+                return tablero[0][2]
+
             return "empate"
-        
-        return "continua"
+
+        return "continua"   
     
     def generar_combinacion_mastermind(self, longitud, colores_disponibles):
         """
@@ -134,4 +141,35 @@ class Games:
             - La torre se mueve horizontal o verticalmente
             - No puede saltar sobre otras piezas
         """
-        pass
+        # validar límites
+        if not (0 <= desde_fila < 8 and 0 <= desde_col < 8 and 0 <= hasta_fila < 8 and 0 <= hasta_col < 8):
+         return False
+
+        # misma posición
+        if desde_fila == hasta_fila and desde_col == hasta_col:
+            return False
+
+         # movimiento horizontal
+        if desde_fila == hasta_fila:
+
+         paso = 1 if hasta_col > desde_col else -1
+
+        for c in range(desde_col + paso, hasta_col, paso):
+            if tablero[desde_fila][c] != " ":
+                return False
+
+            return True
+
+        # movimiento vertical
+
+        if desde_col == hasta_col:
+
+          paso = 1 if hasta_fila > desde_fila else -1
+
+          for f in range(desde_fila + paso, hasta_fila, paso):
+             if tablero[f][desde_col] != " ":
+                return False
+
+        return True 
+    
+
