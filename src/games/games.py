@@ -143,33 +143,36 @@ class Games:
         """
         # validar límites
         if not (0 <= desde_fila < 8 and 0 <= desde_col < 8 and 0 <= hasta_fila < 8 and 0 <= hasta_col < 8):
-         return False
+            return False
 
         # misma posición
         if desde_fila == hasta_fila and desde_col == hasta_col:
             return False
+        
+        # la torre solo se mueve en línea recta
+        if desde_fila != hasta_fila and desde_col != hasta_col:
+            return False
 
-         # movimiento horizontal
+        # movimiento horizontal
         if desde_fila == hasta_fila:
 
-         paso = 1 if hasta_col > desde_col else -1
+            paso = 1 if hasta_col > desde_col else -1
 
-        for c in range(desde_col + paso, hasta_col, paso):
-            if tablero[desde_fila][c] != " ":
-                return False
+            for c in range(desde_col + paso, hasta_col, paso):
+                if tablero[desde_fila][c] != " ":
+                    return False
 
             return True
 
         # movimiento vertical
-
         if desde_col == hasta_col:
 
-          paso = 1 if hasta_fila > desde_fila else -1
+            paso = 1 if hasta_fila > desde_fila else -1
 
-          for f in range(desde_fila + paso, hasta_fila, paso):
-             if tablero[f][desde_col] != " ":
-                return False
+            for f in range(desde_fila + paso, hasta_fila, paso):
+                if tablero[f][desde_col] != " ":
+                    return False
 
-        return True 
-    
+            return True
 
+        return False
