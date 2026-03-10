@@ -62,11 +62,13 @@ class Strings:
         Returns:
             int: Número de consonantes en la cadena
         """ 
-        vocales = "aeiouyAEIOUY"
+        vocales = "aeiouAEIOU"
         contador = 0
+
         for c in texto:
-            if c.isalpha() and c not in vocales:
-                contador += 1   
+            if c.isalpha() and c not in vocales and c != "Y":
+                contador += 1
+
         return contador
         
 
@@ -215,4 +217,10 @@ class Strings:
         Returns:
             list: Lista con las posiciones iniciales de cada ocurrencia
         """
-        pass
+        if subcadena == "":
+            return []
+        posiciones = []
+        for i in range(len(texto) - len(subcadena) + 1):
+            if texto[i:i+len(subcadena)] == subcadena:
+                posiciones.append(i)
+        return posiciones   
