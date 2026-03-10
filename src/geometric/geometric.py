@@ -370,3 +370,7 @@ class Geometria:
         """
 
         return float(num_lados * lado)
+    
+    """
+    Ejercicios de geometric 
+    """
