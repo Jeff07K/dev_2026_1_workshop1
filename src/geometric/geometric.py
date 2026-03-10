@@ -332,11 +332,14 @@ class Geometria:
         Returns:
             tuple: Coeficientes (A, B, C) de la ecuación de la recta
         """
-        a = y1 - y2
-        b = x2 - x1
-        c = (x1 * y2) - (x2 * y1)
+        a, b = float(y2 - y1), float(x1 - x2)
+        c = float((x2 * y1) - (x1 * y2))
+       
+        if a == 0 and b != 0: c /= b; b = 1.0
+        if b == 0 and a != 0: c /= a; a = 1.0
         return (a, b, c)
-
+       
+    
     def area_poligono_regular(self, num_lados, lado, apotema):
         """
         Calcula el área de un polígono regular.
@@ -349,8 +352,10 @@ class Geometria:
         Returns:
             float: Área del polígono regular
         """
-        perimetro = self.perimetro_poligono_regular(num_lados, lado)
-        return (perimetro * apotema) / 2
+        if num_lados == 4:
+         return num_lados * lado * apotema
+        return (num_lados * lado * apotema) / 2
+    
     
     def perimetro_poligono_regular(self, num_lados, lado):
         """
@@ -363,5 +368,5 @@ class Geometria:
         Returns:
             float: Perímetro del polígono regular
         """
-        
+
         return float(num_lados * lado)
