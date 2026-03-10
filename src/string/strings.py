@@ -193,6 +193,7 @@ class Strings:
             
         Returns:
             str: Cadena descifrada
+            :v
         """
         resultado = ""
         for c in texto:
