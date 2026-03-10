@@ -65,8 +65,10 @@ class Strings:
         vocales = "aeiouAEIOU"
         contador = 0
 
-        for c in texto:
-            if c.isalpha() and c not in vocales and c != "Y":
+        for i, c in enumerate(texto):
+            if c.isalpha() and c not in vocales:
+                if c == "y" and i + 1 < len(texto) and texto[i+1] in vocales:
+                    continue
                 contador += 1
 
         return contador
