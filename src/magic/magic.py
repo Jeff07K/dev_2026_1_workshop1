@@ -210,4 +210,26 @@ class Magic:
         Returns:
             bool: True si es un cuadrado mágico, False en caso contrario
         """
-        pass
+        n = len(matriz)
+        if any(len(fila) != n for fila in matriz):
+            return False  # No es una matriz cuadrada
+        
+        suma_magica = sum(matriz[0])  # Suma de la primera fila como referencia
+        
+        # Verificar filas
+        for fila in matriz:
+            if sum(fila) != suma_magica:
+                return False
+        
+        # Verificar columnas
+        for col in range(n):
+            if sum(matriz[row][col] for row in range(n)) != suma_magica:
+                return False
+        
+        # Verificar diagonales
+        if sum(matriz[i][i] for i in range(n)) != suma_magica:
+            return False
+        if sum(matriz[i][n - 1 - i] for i in range(n)) != suma_magica:
+            return False
+        
+        return True
