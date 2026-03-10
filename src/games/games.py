@@ -27,9 +27,15 @@ class Games:
             piedra_p
         """
 
-        pass
-        
-    
+        if jugador1 == jugador2:
+            return "empate"
+        elif (jugador1 == "piedra" and jugador2 == "tijera") or \
+             (jugador1 == "papel" and jugador2 == "piedra") or \
+             (jugador1 == "tijera" and jugador2 == "papel"):
+            return "jugador1"
+        else:
+            return "jugador2"
+
     def adivinar_numero_pista(self, numero_secreto, intento):
         """
         Proporciona pistas para un juego de adivinanza de números.
@@ -41,7 +47,12 @@ class Games:
         Returns:
             str: "correcto", "muy alto" o "muy bajo"
         """
-        pass
+        if intento == numero_secreto:
+            return "correcto"
+        elif intento > numero_secreto:
+            return "muy alto"
+        else:
+            return "muy bajo"
     
     def ta_te_ti_ganador(self, tablero):
         """
