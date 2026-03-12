@@ -82,7 +82,17 @@ class Matrix:
         Ejemplo:
             multiplicar_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[19, 22], [43, 50]]
         """
-        pass
+        if len(A[0]) != len(B):
+            raise ValueError("Dimensiones incompatibles")
+
+        resultado = [[0]*len(B[0]) for _ in range(len(A))]
+
+        for i in range(len(A)):
+         for j in range(len(B[0])):
+            for k in range(len(B)):
+                resultado[i][j] += A[i][k] * B[k][j]
+
+        return resultado
 
     def multiplicar_escalar(self, matriz, escalar):
         """
