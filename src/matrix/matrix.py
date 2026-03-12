@@ -209,7 +209,13 @@ class Matrix:
             traza([[1, 2], [3, 4]]) -> 5
             traza([[1, 0, 0], [0, 5, 0], [0, 0, 9]]) -> 15
         """
-        pass
+        if not self.es_cuadrada(matriz):
+            raise ValueError("La matriz debe ser cuadrada")
+        
+        suma = 0
+        for i in range(len(matriz)):
+            suma += matriz[i][i]
+        return suma
 
     def determinante_2x2(self, matriz):
         """
