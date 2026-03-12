@@ -235,7 +235,15 @@ class Matrix:
             determinante_2x2([[3, 8], [4, 6]]) -> -14
             determinante_2x2([[1, 2], [3, 4]]) -> -2
         """
-        pass
+        if len(matriz) != 2 or len(matriz[0]) != 2:
+            raise ValueError("La matriz debe ser 2x2")
+        
+        a = matriz[0][0]
+        b = matriz[0][1]
+        c = matriz[1][0]
+        d = matriz[1][1]
+
+        return a * d - b * c
 
     def determinante_3x3(self, matriz):
         """
