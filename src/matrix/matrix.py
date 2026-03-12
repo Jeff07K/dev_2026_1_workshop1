@@ -314,7 +314,13 @@ class Matrix:
             diagonal([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [1, 5, 9]
             diagonal([[3, 0], [0, 7]]) -> [3, 7]
         """
-        pass
+        if not self.es_cuadrada(matriz):
+            raise ValueError("La matriz debe ser cuadrada")
+        
+        diagonal = []
+        for i in range(len(matriz)):
+            diagonal.append(matriz[i][i])
+        return diagonal
 
     def es_diagonal(self, matriz):
         """
