@@ -108,8 +108,16 @@ class Matrix:
         Ejemplo:
             multiplicar_escalar([[1, 2], [3, 4]], 3) -> [[3, 6], [9, 12]]
         """
-        pass
+        resultado = []
 
+        for i in range(len(matriz)):
+            fila = []
+            for j in range(len(matriz[0])):
+                fila.append(matriz[i][j] * escalar)
+            resultado.append(fila)
+
+        return resultado
+    
     def transpuesta(self, matriz):
         """
         Calcula la transpuesta de una matriz (intercambia filas por columnas).
