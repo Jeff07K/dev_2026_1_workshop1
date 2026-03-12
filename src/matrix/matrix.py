@@ -286,7 +286,16 @@ class Matrix:
             identidad(2) -> [[1, 0], [0, 1]]
             identidad(3) -> [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
         """
-        pass
+        resultado = []
+        for i in range(n):
+            fila = []
+            for j in range(n):
+                if i == j:
+                    fila.append(1)
+                else:
+                    fila.append(0)
+            resultado.append(fila)
+        return resultado
 
     def diagonal(self, matriz):
         """
