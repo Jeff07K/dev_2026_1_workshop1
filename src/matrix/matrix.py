@@ -361,7 +361,18 @@ class Matrix:
             rotar_90([[1, 2], [3, 4]]) -> [[3, 1], [4, 2]]
             rotar_90([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
         """
-        pass
+        if matriz == []:
+            return []
+
+        filas = len(matriz)
+        columnas = len(matriz[0])
+        resultado = [[0]*filas for _ in range(columnas)]
+
+        for i in range(filas):
+            for j in range(columnas):
+                resultado[j][filas - 1 - i] = matriz[i][j]
+
+        return resultado
 
     def buscar_en_matriz(self, matriz, valor):
         """
